@@ -6,22 +6,23 @@ import NavBarLink from "./Navbarlink";
 import { CartContext } from "../cart/CartContext";
 
 function Navbar() {
-  const { setNumberCartItems, setCartItems, setCartTotal, numberCartItems } = useContext(CartContext);
+  const { setNumberCartItems, setCartItems, setCartTotal, numberCartItems } =
+    useContext(CartContext);
   return (
-    <div className="navbar">
+    <div className="navbar sticky-top">
       <div>
         <Link to="/" className=" navbar-logo">
           ShopSpark
         </Link>
       </div>
-      
+
       <div className="navbar-auth">
-        
-        <NavBarLink/>
+        <NavBarLink />
         <span className="spacer"></span>
-       
+
         <div className="my-3">
-          <Link to="/cart"><FaCartPlus size={27} />
+          <Link to="/cart">
+            <FaCartPlus size={27} />
             {numberCartItems === 0 || (
               <span
                 className="position-absolute translate-middle badge rounded-pill"
@@ -29,7 +30,7 @@ function Navbar() {
                   fontSize: "0.55rem",
                   padding: "0.5em 0.65em",
                   backgroundColor: "#6050DC",
-                  right:-2,
+                  right: -2,
                   // bottom:30
                 }}
               >
@@ -38,7 +39,6 @@ function Navbar() {
             )}
           </Link>
         </div>
-        {/* </button> */}
       </div>
     </div>
   );
