@@ -13,6 +13,7 @@ const UserInfo = ({ userInfo }) => {
           alt="User Profile"
           className={`img-fluid rounded-circle mb-3 mx-auto ${styles.profileImage}`}
         />
+        <h4>{`${userInfo.username}`}</h4>
         <h4>{`${userInfo.first_name} ${userInfo.last_name}`}</h4>
 
         <button
@@ -34,7 +35,7 @@ const UserInfo = ({ userInfo }) => {
             <div className="row">
               <div className="col-md-6">
                 <p>
-                  <strong>Full Name:</strong>{" "}
+                  <strong>Full Name:</strong> {`${userInfo.username}`}
                   {`${userInfo?.first_name} ${userInfo?.last_name}`}
                 </p>
                 <p>
