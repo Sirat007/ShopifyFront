@@ -23,6 +23,8 @@ import TermsofService from "./components/foot/TermsofService";
 
 import Accessibility from "./components/foot/Accessibility";
 import { CartProvider } from "./components/cart/CartContext";
+import CategoryProducts from "./components/Home/CategoryProducts";
+import SearchResults from "./components/ui/SearchResults";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -67,6 +69,11 @@ const App = () => {
             >
               <Route index element={<HomePage />} />
               <Route path="products/:slug" element={<ProductPage />} />
+              <Route
+                path="/category/:categoryName"
+                element={<CategoryProducts />}
+              />
+              <Route path="/search-results" element={<SearchResults />} />
 
               <Route path="cart" element={<CartPage />} />
               <Route
