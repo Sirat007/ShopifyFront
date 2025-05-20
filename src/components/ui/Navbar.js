@@ -29,7 +29,7 @@ function Navbar() {
     if (searchQuery.trim()) {
       try {
         const response = await fetch(
-          `http://127.0.0.1:8000/products/search/?q=${encodeURIComponent(
+          `https://shopifybackend-1-jypf.onrender.com/products/search/?q=${encodeURIComponent(
             searchQuery.trim()
           )}`
         );
@@ -37,7 +37,7 @@ function Navbar() {
         navigate("/search-results", {
           state: { results: data.results, query: searchQuery },
         });
-        // Clear search input after search
+
         setSearchQuery("");
       } catch (error) {
         console.error("Search failed:", error);
@@ -51,12 +51,10 @@ function Navbar() {
       className="py-2 bg-white border-bottom shadow-sm sticky-top"
     >
       <Container fluid className="px-3">
-        {/* Logo */}
         <BootstrapNavbar.Brand as={Link} to="/" className="fw-bold fs-4">
           <span className="text-primary">Shop</span>Spark
         </BootstrapNavbar.Brand>
 
-        {/* Categories Dropdown */}
         <Dropdown className="me-auto">
           <Dropdown.Toggle
             variant="outline-secondary"

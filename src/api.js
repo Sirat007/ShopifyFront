@@ -1,9 +1,9 @@
 import axios from "axios";
 import { jwtDecode } from "jwt-decode";
 
-export const BASEURL = "http://127.0.0.1:8000/";
+export const BASEURL = "https://shopifybackend-1-jypf.onrender.com";
 const api = axios.create({
-  baseURL: "http://127.0.0.1:8000/",
+  baseURL: "https://shopifybackend-1-jypf.onrender.com",
 });
 
 api.interceptors.request.use(
